@@ -6,6 +6,13 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
+
+  const totalPlanets = data.planets;
+
+  return totalPlanets.filter(item =>{
+    return item.name === 'Earth'
+  })
+  .map(planet => planet)[0];
 }
 
 

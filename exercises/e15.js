@@ -6,6 +6,20 @@ import { data } from "../data/data";
 
 export function getPlanetsWithNoMoons(data) {
   // Your code goes here...
+
+  const planetData = data.planets;
+  const noMoon = planetData.filter(item => {
+    // console.log(!item.moons, 'item moons Out')
+    if (item.moons === undefined){
+      // console.log(item.name, 'item name')
+      // console.log(item.moons, 'item.moons')
+      return item.name
+    } else {
+      null
+    }
+  })
+  const nameOfPlanet = noMoon.map(item => item.name);
+  return nameOfPlanet;
 }
 
 

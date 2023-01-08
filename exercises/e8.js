@@ -6,6 +6,28 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+
+  const planetMoons = data.planets
+  const nameOfMoon= planetMoons.filter(val => {
+     if(val.moons) {
+        return val.moons.filter(item => {
+           // console.log(item === moonName, 'innerfilter');
+           if(item === moonName){
+              return item;
+           } else {
+              null;
+           }
+        })
+     } else {
+        null;
+     }
+  })
+  .map(item => {
+  //   console.log(item.name, 'item name')
+    return item.name
+   })
+  // console.log(nameOfMoon[1], 'nameOfMoon');
+  return nameOfMoon[1];
 }
 
 
